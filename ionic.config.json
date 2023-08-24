@@ -1,0 +1,7 @@
+{
+  "name": "cart-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

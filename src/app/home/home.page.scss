@@ -1,0 +1,85 @@
+ion-content {
+    ion-list {
+        margin: 0 10px;
+        background: transparent;
+        ion-card {
+            border-radius: 10px;
+            ion-item {
+                --padding-start: 5px;
+                --inner-padding-end: 5px;
+                padding: 5px;
+                ion-thumbnail {
+                    height: 10vh;
+                    width: 9vh;
+                    border: 2px solid var(--ion-color-light);
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                      height: 85%;
+                      width: 85%;
+                    }
+                }
+                ion-label {
+                    ion-text.title {
+                      font-size: 0.9rem;
+                      // font-weight: 500;
+                    }
+                    p {
+                      margin-top: 3px;
+                      ion-text {
+                        font-size: 0.8rem;
+                      }
+                    }
+                    p.price {
+                      margin-top: 5px;
+                      ion-text {
+                        font-weight: bold;
+                        font-size: 1.4rem;
+                      }
+                    }
+                }
+                ion-row {
+                    background-color: var(--ion-color-light);
+                    padding: 0 10px;
+                    border-radius: 5px;
+                    margin: 0; // for android
+                    writing-mode: vertical-lr;
+                    ion-col {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        ion-text {
+                            writing-mode: horizontal-tb;
+                        }
+                        ion-icon {
+                            font-size: 0.8rem;
+                        }
+                    }
+                    ion-col.qty {
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+      ion-item.total {
+        margin: 0 1vh;
+        font-size: 1.1rem;
+        ion-text {
+          font-weight: bold;
+        }
+      }
+      ion-button {
+        margin: 2vh 3vh 3vh 3vh;
+        ion-text {
+          font-size: 1rem;
+        }
+      }
+    }
+}

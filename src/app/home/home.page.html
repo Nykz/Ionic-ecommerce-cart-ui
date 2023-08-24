@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-title>
+      My Cart
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img src="assets/imgs/avatar.png" />
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-list lines="none" *ngIf="items.length > 0">
+
+    <ion-card class="ion-margin" *ngFor="let item of items; let i = index">
+
+      <ion-item>
+
+        <ion-thumbnail slot="start">
+          <img [src]="item.photo" />
+        </ion-thumbnail>
+
+        <ion-label>
+          <ion-text class="title">
+            {{ item?.name }}
+          </ion-text>
+          <p *ngIf="item?.color">
+            <ion-text>Color-{{ item.color }}</ion-text>
+          </p>
+          <p class="price">
+            <ion-text color="dark">
+              ${{ item?.price }}
+            </ion-text>
+          </p>
+        </ion-label>
+
+        <ion-row slot="end">
+          <ion-col>
+            <ion-icon name="add" color="danger" (click)="addQuantity(i)"></ion-icon>
+          </ion-col>
+          <ion-col class="qty">
+            <ion-text>{{ item?.quantity }}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="remove" color="danger" (click)="minusQuantity(i)"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+      </ion-item>
+
+    </ion-card>
+
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="light">
+
+    <ion-item lines="none" color="light" class="total">
+      <ion-label>
+        Total
+      </ion-label>
+      <ion-text slot="end">
+        ${{ total }}
+      </ion-text>
+    </ion-item>
+
+    <ion-button [strong]="true" color="danger" expand="block" size="large">
+      <ion-text>Order Now</ion-text>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
