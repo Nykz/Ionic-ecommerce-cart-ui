@@ -24,15 +24,17 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     for(let i = 0; i < this.items.length; i++) {
-      this.total += this.items[i].price;
+      this.total += this.items[i].price * this.items[i].quantity;
     }
   }
 
   addQuantity(index: number) {
     this.items[index].quantity++;
+    this.total += this.items[index].price;
   }
 
   minusQuantity(index: number) {
+    this.total -= this.items[index].price;
     if(this.items[index].quantity > 1) this.items[index].quantity--;
     else {
       this.items = this.items.filter((item) => item.id != this.items[index].id);
